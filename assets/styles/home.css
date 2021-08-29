@@ -23,8 +23,11 @@ body{
 
 h1{
     color: var(--c-primary);
+    text-transform: uppercase;
+    margin: 20px;
 }
 
 img{
-    height: 50%;
+    height: 200px;
+    width: 200px;
 }
