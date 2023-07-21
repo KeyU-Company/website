@@ -20,30 +20,31 @@ const firebaseConfig = {
   function submitForm(e) {
     e.preventDefault();
   
-    var name = getElementVal("name");
-    var name = getElementVal("city");
-    var name = getElementVal("org");
-    var name = getElementVal("job");
-    var name = getElementVal("training");
-    var name = getElementVal("days");
-    var name = getElementVal("language");
-    var name = getElementVal("phone");
-    var name = getElementVal("mail");
-    var name = getElementVal("message");
+    var fullName = getElementVal("name");
+    var city = getElementVal("city");
+    var organization = getElementVal("org");
+    var jobTitle = getElementVal("job");
+    var training = getElementVal("training");
+    var daysAvailable = getElementVal("days");
+    var language = getElementVal("language");
+    var phoneNumber = getElementVal("phone");
+    var email = getElementVal("mail");
+    var message = getElementVal("message");
   
-    saveMessages(name, city, org, job, training, days, language, phone, mail, message);
+    saveMessages(fullName, city, organization, jobTitle, training, daysAvailable, language, phoneNumber, email, message);
   
-    //   enable alert
+    // Enable alert
     document.querySelector(".alert").style.display = "block";
   
-    //   remove the alert
+    // Remove the alert
     setTimeout(() => {
       document.querySelector(".alert").style.display = "none";
     }, 3000);
   
-    //   reset the form
+    // Reset the form
     document.getElementById("Keyupedia").reset();
   }
+  
   
   const saveMessages = (name, city, org, job, training, days, language, phone, mail, message) => {
     var newKeyupedia = KeyupediaDB.push();

@@ -5,7 +5,15 @@
     <title>Keyupedia - Index</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-  
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <!-- Your 'mail.js' script -->
+    <script src="mail.js"></script>
+
+    <!-- Your 'main.js' script -->
+    <script src="main.js"></script>
     <!-- Favicons -->
     <link href="assets/img/keyu.png" rel="icon">
     <link href="assets/img/keyu.png" rel="apple-touch-icon">
@@ -134,21 +142,10 @@
               </form>
   
             </div>
-            <div class="success-message" style="display: none;">
-              Your application sent successfully.
-            </div>
-            <script style="color: green;">
-              document.getElementById("Keyupedia").addEventListener("submit", function (event) {
-                event.preventDefault();
-                document.getElementById("Keyupedia").style.display = "none";
-                document.getElementById("message-container").style.display = "none";
-                document.querySelector(".success-message").style.display = "block";
-              });
-            </script>
             
           <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
           <script src="mail.js"></script>
-    
+            
         </div>
       </section><!-- End Hero -->
     
