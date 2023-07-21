@@ -1,46 +1,51 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDqCC3gjNTnvTbXUGIx1WQRMKAOVUMx0N4",
-    authDomain: "keyupedia.firebaseapp.com",
-    databaseURL: "https://keyupedia-default-rtdb.firebaseio.com",
-    projectId: "keyupedia",
-    storageBucket: "keyupedia.appspot.com",
-    messagingSenderId: "575964882549",
-    appId: "1:575964882549:web:f55fbe54a82087df313a3c",
-    measurementId: "G-0FX62HTT4F"
+    apiKey: "AIzaSyDlTCVnTaPb0Bbtx1FFIYDkroOV13hib7E",
+    authDomain: "keyupedia-d726c.firebaseapp.com",
+    databaseURL: "https://keyupedia-d726c-default-rtdb.firebaseio.com",
+    projectId: "keyupedia-d726c",
+    storageBucket: "keyupedia-d726c.appspot.com",
+    messagingSenderId: "787956068682",
+    appId: "1:787956068682:web:ff9766464cd811655b91b3",
+    measurementId: "G-Z5BDWSKG2Y"
   };
- 
 
   // initialize firebase
   firebase.initializeApp(firebaseConfig);
-
-
-// refrence database
-var keyupediaDB = firebase.database().ref("Keyupedia")
-
-document.getElementById("keyupedia").addEventListener("submit", submetform);
-
-function submetform(e){
+  
+  // reference your database
+  var KeyupediaDB = firebase.database().ref("Keyupedia");
+  
+  document.getElementById("Keyupedia").addEventListener("submit", submitForm);
+  
+  function submitForm(e) {
     e.preventDefault();
-
+  
     var name = getElementVal("name");
-    var job = getElementVal("job");
-    var phone = getElementVal("phone");
-    var mail = getElementVal("mail")
 
-    saveMessages(name, job, phone, mail);
-}
-const saveMessages = (name, job, phone, mail) => {
-    var newkeyupedia = keyupediaDB.push();
-
-    newkeyupedia.set({
-        name = name,
-        job = job,
-        phone = phone,
-        mail = mail,
-
-    })
-}
-
-const getElementVal = (id) => {
-    return document.getElementById(id).ariaValueMax;
-}
+  
+    saveMessages(name);
+  
+    //   enable alert
+    document.querySelector(".alert").style.display = "block";
+  
+    //   remove the alert
+    setTimeout(() => {
+      document.querySelector(".alert").style.display = "none";
+    }, 3000);
+  
+    //   reset the form
+    document.getElementById("Keyupedia").reset();
+  }
+  
+  const saveMessages = (name) => {
+    var newKeyupedia = KeyupediaDB.push();
+  
+    newKeyupedia.set({
+      name: name,
+    });
+  };
+  
+  const getElementVal = (id) => {
+    return document.getElementById(id).value;
+  };
+  
