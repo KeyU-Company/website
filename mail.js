@@ -21,9 +21,17 @@ const firebaseConfig = {
     e.preventDefault();
   
     var name = getElementVal("name");
-
+    var name = getElementVal("city");
+    var name = getElementVal("org");
+    var name = getElementVal("job");
+    var name = getElementVal("training");
+    var name = getElementVal("days");
+    var name = getElementVal("language");
+    var name = getElementVal("phone");
+    var name = getElementVal("mail");
+    var name = getElementVal("message");
   
-    saveMessages(name);
+    saveMessages(name, city, org, job, training, days, language, phone, mail, message);
   
     //   enable alert
     document.querySelector(".alert").style.display = "block";
@@ -37,11 +45,19 @@ const firebaseConfig = {
     document.getElementById("Keyupedia").reset();
   }
   
-  const saveMessages = (name) => {
+  const saveMessages = (name, city, org, job, training, days, language, phone, mail, message) => {
     var newKeyupedia = KeyupediaDB.push();
   
     newKeyupedia.set({
       name: name,
+      city: city,
+      org: org,
+      training: training,
+      days: days,
+      language: language,
+      phone: phone,
+      mail: mail,
+      message:  message,
     });
   };
   
