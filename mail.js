@@ -1,13 +1,13 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyDlTCVnTaPb0Bbtx1FFIYDkroOV13hib7E",
-    authDomain: "keyupedia-d726c.firebaseapp.com",
-    databaseURL: "https://keyupedia-d726c-default-rtdb.firebaseio.com",
-    projectId: "keyupedia-d726c",
-    storageBucket: "keyupedia-d726c.appspot.com",
-    messagingSenderId: "787956068682",
-    appId: "1:787956068682:web:ff9766464cd811655b91b3",
-    measurementId: "G-Z5BDWSKG2Y"
-  };
+  apiKey: "AIzaSyANOx_iyd63uIqV5Xj0mjJVIT0-I0UMjH8",
+  authDomain: "keyupedia-3ae78.firebaseapp.com",
+  databaseURL: "https://keyupedia-3ae78-default-rtdb.firebaseio.com",
+  projectId: "keyupedia-3ae78",
+  storageBucket: "keyupedia-3ae78.appspot.com",
+  messagingSenderId: "704351033096",
+  appId: "1:704351033096:web:033db5ebb08b84494d3ebd",
+  measurementId: "G-7YFFXXDEV5"
+};
 
   // initialize firebase
   firebase.initializeApp(firebaseConfig);
