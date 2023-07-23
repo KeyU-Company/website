@@ -16,35 +16,52 @@ const firebaseConfig = {
   var contactFormDB = firebase.database().ref("contactForm");
   
   document.getElementById("contactForm").addEventListener("submit", submitForm);
-  
-  function submitForm(e) {
-    e.preventDefault();
-  
-    var name = getElementVal("name");
-  
-    saveMessages(name);
-  
-    //   enable alert
-    document.querySelector(".alert").style.display = "block";
-  
-    //   remove the alert
-    setTimeout(() => {
-      document.querySelector(".alert").style.display = "none";
-    }, 3000);
-  
-    //   reset the form
-    document.getElementById("contactForm").reset();
-  }
-  
-  const saveMessages = (name) => {
-    var newContactForm = contactFormDB.push();
-  
-    newContactForm.set({
-      name: name,
-    });
-  };
-  
-  const getElementVal = (id) => {
-    return document.getElementById(id).value;
-  };
-  
+
+function submitForm(e) {
+  e.preventDefault();
+
+  var name = getElementVal("name");
+  var city = getElementVal("City");
+  var organization = getElementVal("Org");
+  var job = getElementVal("Job");
+  var training = getElementVal("Training");
+  var days = getElementVal("days");
+  var language = getElementVal("language");
+  var phone = getElementVal("Phone");
+  var email = getElementVal("mail");
+  var message = getElementVal("message");
+
+  saveMessages(name, city, organization, job, training, days, language, phone, email, message);
+
+  // enable alert
+  document.querySelector(".alert").style.display = "block";
+
+  // remove the alert
+  setTimeout(() => {
+    document.querySelector(".alert").style.display = "none";
+  }, 3000);
+
+  // reset the form
+  document.getElementById("contactForm").reset();
+}
+
+const saveMessages = (name, city, organization, job, training, days, language, phone, email, message) => {
+  var newContactForm = contactFormDB.push();
+
+  newContactForm.set({
+    name: name,
+    city: city,
+    organization: organization,
+    job: job,
+    training: training,
+    days: days,
+    language: language,
+    phone: phone,
+    email: email,
+    message: message,
+  });
+};
+
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};
