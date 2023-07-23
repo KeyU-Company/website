@@ -140,17 +140,22 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100" onclick="redirectToMLPage()">
             <div class="icon-box">
               <div class="icon"><img src="assets/img/MLicon.ico" class="img-fluid" width="60" height="60"></div>
-              <h4><a href="ML.html">Machine Leraning</a></h4>
+              <h4>Machine Learning</h4>
               <p>Types of ML, basic Python, Pandas, Numpy, Scipy, scikit-learn, TensorFlow.</p>
-              <p style="text-align: right;"><a href="ML.html" style="color: green;">Available</a></p>
-
+              <p style="text-align: right;color: green;">Available</p>
             </div>
-          </div>
+          </div>  
+          <script>
+            function redirectToMLPage() {
+              window.location.href = "ML.html";
+            }
+          </script> 
+            
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200" onclick="redirectToMLPage()" >
             <div class="icon-box">
               <div class="icon"><i class="bx bx-file"></i></div>
               <h4><a href="">Full-Stack Development</a></h4>
@@ -158,6 +163,11 @@
               <p style="text-align: right;"><a href="ML.html" style="color: red;">Not Available</a></p>
             </div>
           </div>
+          <script>
+            function redirectToMLPage() {
+              window.location.href = "full-stack.html";
+            }
+            </script>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="icon-box">
