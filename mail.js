@@ -9,60 +9,41 @@ const firebaseConfig = {
   measurementId: "G-7YFFXXDEV5"
 };
 
-  // initialize firebase
-  firebase.initializeApp(firebaseConfig);
-  
-  // reference your database
-  var KeyupediaDB = firebase.database().ref("Keyupedia");
-  
-  document.getElementById("Keyupedia").addEventListener("submit", submitForm);
-  
-  function submitForm(e) {
-    e.preventDefault();
-  
-    var fullName = getElementVal("name");
-    var city = getElementVal("city");
-    var organization = getElementVal("org");
-    var jobTitle = getElementVal("job");
-    var training = getElementVal("training");
-    var daysAvailable = getElementVal("days");
-    var language = getElementVal("language");
-    var phoneNumber = getElementVal("phone");
-    var email = getElementVal("mail");
-    var message = getElementVal("message");
-  
-    saveMessages(fullName, city, organization, jobTitle, training, daysAvailable, language, phoneNumber, email, message);
-  
-    // Enable alert
-    document.querySelector(".alert").style.display = "block";
-  
-    // Remove the alert
-    setTimeout(() => {
-      document.querySelector(".alert").style.display = "none";
-    }, 3000);
-  
-    // Reset the form
-    document.getElementById("Keyupedia").reset();
-  }
-  
-  
-  const saveMessages = (name, city, org, job, training, days, language, phone, mail, message) => {
-    var newKeyupedia = KeyupediaDB.push();
-  
-    newKeyupedia.set({
-      name: name,
-      city: city,
-      org: org,
-      training: training,
-      days: days,
-      language: language,
-      phone: phone,
-      mail: mail,
-      message:  message,
-    });
-  };
-  
-  const getElementVal = (id) => {
-    return document.getElementById(id).value;
-  };
-  
+// initialize firebase
+firebase.initializeApp(firebaseConfig);
+
+// reference your database
+var contactFormDB = firebase.database().ref("contactForm");
+
+document.getElementById("contactForm").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+  e.preventDefault();
+
+  var name = getElementVal("name");
+
+  saveMessages(name);
+
+  //   enable alert
+  document.querySelector(".alert").style.display = "block";
+
+  //   remove the alert
+  setTimeout(() => {
+    document.querySelector(".alert").style.display = "none";
+  }, 3000);
+
+  //   reset the form
+  document.getElementById("contactForm").reset();
+}
+
+const saveMessages = (name) => {
+  var newContactForm = contactFormDB.push();
+
+  newContactForm.set({
+    name: name,
+  });
+};
+
+const getElementVal = (id) => {
+  return document.getElementById(id).value;
+};
