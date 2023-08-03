@@ -33,14 +33,9 @@ function submitForm(e) {
 
   saveMessages(name, city, organization, job, training, days, language, phone, email, message);
 
-  // enable alert
-  document.querySelector(".alert").style.display = "block";
+  
 
-  // remove the alert
-  setTimeout(() => {
-    document.querySelector(".alert").style.display = "none";
-  }, 3000);
-
+  
   // reset the form
   document.getElementById("contactForm").reset();
 }

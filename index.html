@@ -37,7 +37,7 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="#index.html">Home</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#Bootcamps">Bootcamps</a></li>
           <li><a class="nav-link scrollto" href="#Training">Training</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
@@ -107,9 +107,7 @@
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
             <h3>Keyupedia Bootcamps</h3>
-            <p class="fst-italic">
-              Powerd by KeyU
-            </p>
+            <p>Powerd by KeyU</p>
            
             <style>
               p {
@@ -144,7 +142,7 @@
             <a href="ML.html" style="text-decoration: none; color: inherit;">
               <div class="icon-box" style="cursor: pointer;">
                 <div class="icon"><img src="assets/img/MLicon.ico" class="img-fluid" width="60" height="60"></div>
-                <h4 style="color: orange;">Machine Learning</h4>
+                <h4 style="color: rgba(255, 166, 0, 0.671);">Machine Learning</h4>
                 <p>Types of ML, basic Python, Pandas, Numpy, Scipy, scikit-learn, TensorFlow.</p>
                 <p style="text-align: right;color: green;">Available</p>
               </div>
@@ -155,49 +153,12 @@
             <a href="Full-Stack.html" style="text-decoration: none; color: inherit;">
               <div class="icon-box" style="cursor: pointer;">
                 <div class="icon"><img src="assets/img/MLicon.ico" class="img-fluid" width="60" height="60"></div>
-                <h4 style="color: orange;">Full-Stack Development</h4>
+                <h4 style="color: rgba(255, 166, 0, 0.671);">Full-Stack Development</h4>
                 <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
-                <p style="text-align: right;color: red;">Available</p>
+                <p style="text-align: right;color:green;">Available</p>
               </div>
             </a>
           </div> 
-          
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-tachometer"></i></div>
-              <h4><a href="">Frontend</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-              <p style="text-align: right;"><a href="ML.html" style="color: red;">Not Available</a></p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-world"></i></div>
-              <h4><a href="">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-              <p style="text-align: right;"><a href="ML.html" style="color: red;">Not Available</a></p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-slideshow"></i></div>
-              <h4><a href="">Dele cardo</a></h4>
-              <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
-              <p style="text-align: right;"><a href="ML.html" style="color: red;">Not Available</a></p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box">
-              <div class="icon"><i class="bx bx-arch"></i></div>
-              <h4><a href="">Divera don</a></h4>
-              <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
-              <p style="text-align: right;"><a href="ML.html" style="color: red;">Not Available</a></p>
-            </div>
-          </div>
-
         </div>
 
       </div>
@@ -301,15 +262,6 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Subscribe us to last activity.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-
-          </div>
-
         </div>
       </div>
     </div>
@@ -338,6 +290,58 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Add this script just before the closing </body> tag -->
+<script>
+  // Function to remove the "active" class from all links except the specified one
+  function removeActiveClassExcept(link) {
+    const navLinks = document.querySelectorAll('a.nav-link');
+    navLinks.forEach((navLink) => {
+      if (navLink !== link && navLink.classList.contains('active')) {
+        navLink.classList.remove('active');
+      }
+    });
+  }
+
+  // Function to add the "active" class to the specified link
+  function addActiveClass(link) {
+    if (!link.classList.contains('active')) {
+      link.classList.add('active');
+    }
+  }
+
+  // Scroll event listener to handle highlighting behavior
+  window.addEventListener('scroll', function () {
+    const navLinks = document.querySelectorAll('a.nav-link');
+    const sections = [];
+
+    // Collect the corresponding sections for each link
+    navLinks.forEach((navLink) => {
+      const target = document.querySelector(navLink.getAttribute('href'));
+      if (target) {
+        sections.push({
+          link: navLink,
+          section: target,
+        });
+      }
+    });
+
+    // Get the current scroll position
+    const currentScrollPosition = window.scrollY;
+
+    // Determine which link should be active based on the current scroll position
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const { link, section } = sections[i];
+      const sectionOffsetTop = section.offsetTop;
+
+      if (currentScrollPosition >= sectionOffsetTop) {
+        removeActiveClassExcept(link);
+        addActiveClass(link);
+        break;
+      }
+    }
+  });
+</script>
 
 </body>
 
